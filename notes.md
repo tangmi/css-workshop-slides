@@ -91,3 +91,6 @@ programming conventions are like religions, web dev is even more so. these are m
 * dat comma
 * browsers read selectors right to left
 
+
+* frameworks
+* firebug
