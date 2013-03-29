@@ -47,6 +47,14 @@
 Or: *Kevin's KodeKitten A-`cat`-amay* Web Development Workshop
 </section>
 
+<section class="slide" id="disclaimer">
+## A quick disclaimer
+
+* #### Coding conventions are like religions. Every one follows one religiously. This will probably be filled with content some people may rage about.
+
+* #### I don't actually know how to CSS very well. Lol, what am I doing up here?
+</section>
+
 <section class="slide" id="quick-review">
 ## Stuff you already know
 
@@ -54,21 +62,51 @@ Or: *Kevin's KodeKitten A-`cat`-amay* Web Development Workshop
     	font-size: 3em;
     	font-weight: bold;
     }
+
+##### This is a CSS, here's some nomenclature:
+
+* The selector (`h1`, in this case) will match an element or set of elements in the document
+* Non-empty selectors contain pairs of properties to values, which defines the declaration
 </section>
 
-<section class="slide" id="disclaimer">
+<section class="slide" id="quick-review-2">
+## Stuff you may already know
 
+* 
+</section>
+
+<section class="slide" id="quick-review-3">
+## Stuff that's nice to know
+
+### Styles that appear later in a document *usually* override prior declarations.
+
+#### Browsers provide default stylings for CSS
+
+* Your CSS is overriding the default css
+* Your early CSS might get overriden by later CSS
+* CSS specificity is stupid, but explains weird cases of declaration overriding
+</section>
+
+<section class="slide" id="quick-review-3-example">
+## Example
+<iframe src="example/index.html" frameborder="0" seamless="true"></iframe>
+</section>
+
+
+
+<section class="slide" id="display-types">
+## Block vs. Inline
 </section>
 
 <section class="slide" id="not-quick-review">
-## Stuff you might not know
+## Extra stuff to fill time
 
-* child selector
-* immediate child selector
-* immediate sibling selector
-* general sibling selector
-* pseudo-selector
-* 
+* **Child selector** (`div p`): Selects children any number of nested levels deep
+* **Immediate child selector** (`div ` > ` p`): Selects immedate children
+* **General sibling selector** (`h1 ~ p`): Selects all following siblings (same level)
+* **Immediate sibling selector** (`h1 + p`): Selects only the first following sibling
+* **Pseudo class selectors** (`:first-child`, `:first-letter`, etc): Special fun selectors whose names are self-explanatory
+* **Pseudo element selectors** (`:before`, `:after`): Inserts a pseudo "element" whose content is defined by the `content` property
 </section>
 
 <section class="slide" id="specificity">
