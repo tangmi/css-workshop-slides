@@ -62,3 +62,10 @@ pre.example:before {
 	color: rgb(130,130,130);
 	margin-bottom: 1em;
 }
+
+a:link {
+	text-decoration: underline !important;
+}
+a:hover {
+	text-decoration: none !important;
+}

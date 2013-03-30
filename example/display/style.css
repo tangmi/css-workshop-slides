@@ -1,0 +1,10 @@
+body {	font-size: 24px; }
+
+div {
+	background-color: rgb(204, 204, 204);
+	margin-bottom: 1em;
+}
+
+div#inline { display: inline; }
+div#block  { display: block; }
+div#table  { display: table; }

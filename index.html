@@ -194,7 +194,7 @@ Here are some examples:
 * `p` refers to a **paragraph** element
 * `ul` and `ol` stand for **unordered** and **ordered lists**
     * `li` stands for **list item**
-* Many more
+* [Many more tags exists](http://www.w3schools.com/tags/)
 * `span` refers to ??? (seriously, I have no idea)
 </section>
 
@@ -224,23 +224,113 @@ The problem here is a `block` display type versus an `inline` one.
 </section>
 
 
+<section class="slide" id="coding-a-page">
+## Let's fill up time watching Michael program
 
-<section class="slide" id="not-quick-review">
-## Extra stuff to fill time
+### 1. To build a website, you need content
 
-* **Child selector** (`div p`): Selects children any number of nested levels deep
-* **Immediate child selector** (`div ` > ` p`): Selects immedate children
-* **General sibling selector** (`h1 ~ p`): Selects all following siblings (same level)
-* **Immediate sibling selector** (`h1 + p`): Selects only the first following sibling
-* **Pseudo class selectors** (`:first-child`, `:first-letter`, etc): Special fun selectors whose names are self-explanatory
-* **Pseudo element selectors** (`:before`, `:after`): Inserts a pseudo "element" whose content is defined by the `content` property
+* Real or fake, you content has to have a purpose. We'll make a blog, because everyone wants a blog.
+
+### 2. Start by building the HTML, unstyled
+
+* Don't even care about how the browser renders it until you decide to start styling
+
+### 3. Fill your CSS with hacks until it works
+
+* Yep, let's not be bashful with our hacks, here.
+
+### 4. Discover that something in your styling is broken and go back and fix it
+
+* This will happen a lot, most likely
+
+### 5. Go back to step 3.
+
+* See how great it is not having to change the HTML once it's set?
+</section>
+
+<section class="slide" id="class-and-id">
+## Class and ID names
+
+### Good class and ID name choices help us style later
+
+* Since it doesn't make sense to have a bunch of anonymous `div`s just hanging around dividing up stuff, we'll name them.
+    * For example, we may want to have a division called `post-list` or `search-result-list` containing all the `post` divisions.
+    * Perhaps we want to differenciate between a `h1` that is the `post-title` and one used in a `post` (though there should really only be one `h1` which is the highest level heading)
+    * *Note: HTML5 provides new `div`-like tags whose names are useful, like `header`, `footer`, `article`, etc.*
+* Classes (denoted with a `.`) are just for naming elements to define the elements purpose.
+* IDs (denoted with a `#`) are for naming **unique elements on a site**, theoretically (not just unique to a page). The site usually has a single header, single footer, single unique post, etc.
+* Class and IDs should **not** be indicative in *any form* of the site's design.
+    * We should always avoid names like `left-sidebar`, `top-header`, `blue-header`, or especially `box`.
+</section>
+
+<section class="slide" id="designing-good-html">
+## Example: designing good HTML
+
+We'll use meaningful tags, `class` names, and `id` names to build a bare-bones blog.
+</section>
+
+
+<section class="slide" id="box-model">
+## The CSS box model
+
+[![css-box-model](img/css-box-model.gif)](http://mattryall.net/blog/2008/08/css-layout-fundamentals-box-model)
+
+#### Things to note:
+
+* Element `width` and `height` dictate the dimensions of just the inner content (though there is a hack to change this)
+* Element `background` extends to the edge of the element's `padding` (`margin` does not)
+* The `border` width is included in the elements final size!
+</section>
+
+<section class="slide" id="display-types">
+## Display types
+
+The `display` property determines how an element is displayed. Prominent types are `inline`, `block`, and `table`; though combinations of the three exist (don't worry about those).
+</section>
+
+<section class="slide" id="floats">
+## Float property
+
+The CSS float property basically allows an element to be pushed to the left or right, allowing other elements to wrap around it.
+
+* Elements can be either floated left or right
+* You can turn off a `float` with the `clear` property, this is useful for footers and the like
+</section>
+
+
+
+<section class="slide" id="styling-good-html">
+## Example: now let's "style" that "nice" HTML
+
+Okay, I'm really winging it here.
+</section>
+
+
+
+
+
+<section class="slide" id="grab-bag-time">
+## Grab bag time!
+
+### I'm going to talk about random topics now
 </section>
 
 <section class="slide" id="specificity">
 ## Specificity
 
-* somebody wanted me to talk about this
+Somebody wanted me to talk about this
+
+### Foreword: 99% of the time you can get away with simply good markup, I've personally never run into a problem where I've had to solve it with CSS specificity rules
+
+* Specificity determines which of your CSS rules gets applied
+* There are four categories (from most specific to least specific): inline, ID, class + pseudo selectors, elements.
+* Each categories has a weight equal to 100 times the next tier down (though in practice, this number is 256)
+* The number of inline styles, IDs, classes, and elements in your selector string defines a selectors' specificity.
+* The last rule define overrides any previous rules of equal specificity
+* Universal and inherited selectors have a specificity of 0, 0, 0, 0 (or just 0).
 </section>
+
+
 
 <section class="slide" id="frameworks">
 ## Guys, Twitter Boostrap
@@ -265,10 +355,25 @@ Twitter Bootstrap and Zurb Foundation are two of the most popular and fully feat
 
 </section>
 
+<section class="slide" id="not-quick-review">
+## Extra stuff to fill time
 
+* **Child selector** (`div p`): Selects children any number of nested levels deep
+* **Anchor selectors** (`:link`, `:visited`, `:hover`, `:active`): Selects different states of a hyperlink
+* **Universal selector** (`*`): Selects everything. Try not to use this.
+* **Attribute selector** (`[attr]`): Selects an element with an attribute
+* **Attribute/value selector** (`[attr=val]`): Selects an element with an attribute of a specific value
+* **Immediate child selector** (<code>div > p</code>): Selects immedate children
+* **General sibling selector** (`h1 ~ p`): Selects all following siblings (same level)
+* **Immediate sibling selector** (`h1 + p`): Selects only the first, immediate following sibling
+* **Pseudo class selectors** (`:first-child`, `:first-letter`, etc): Special fun selectors whose names are self-explanatory
+* **Pseudo element selectors** (`:before`, `:after`): Inserts a pseudo "element" whose content is defined by the `content` property
 
-<section class="slide" id="quick-review-3-example">
-## Example
+Better information is available at the [actual W3 spec](http://www.w3.org/TR/CSS2/selector.html).
+</section>
+
+<section class="slide" id="questions">
+## Any questions?
 </section>
 
 
@@ -317,7 +422,11 @@ $(function() {
 	(function() {
 		var examples = {
 			"names-2-example": "names-2",
-			"quick-review-3-example": "test"
+			"designing-good-html": "designing-good-html",
+			"styling-good-html": "designing-good-html",
+			"display-types": "display",
+			"floats": "float",
+			"questions": "test"
 		}
 		var loadExample = function( id, path ) {
 			// document.write('<iframe src="' + path + '" frameborder="0" seamless="true"><\/iframe>');

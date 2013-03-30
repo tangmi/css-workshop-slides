@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Display example</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="inline">Inline acts like regular text</div> and won't force following inline elements to wrap. Note that it doesn't really have a box model (doesn't honor <code>margin</code> or <code>padding</code>)
+
+<div id="block">Block defaults to a 100% width</div> and forces all following elements to wrap. This is the default for all "block elements", such as <code>div</code>, all the headers, <code>p</code>, <code>ol</code> and <code>ul</code>, etc.
+
+
+<div id="table">Table is stupid and you shouldn't use it</div> it acts like a block element, but entirely doesn't honor the <code>width</code> property if there's overflow.
+</body>
+</html>

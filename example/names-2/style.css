@@ -1,13 +1,13 @@
 h1#problem {
-	background-color: gray;
+	background-color: rgb(204, 204, 204);
 }
 
 h1#bad-html span {
-	background-color: gray;
+	background-color: rgb(204, 204, 204);
 }
 
 h1#good-html {
-	background-color: gray;
+	background-color: rgb(204, 204, 204);
 	display: inline-block;
 }
 h1#good-html:after {
