@@ -355,9 +355,13 @@ Twitter Bootstrap and Zurb Foundation are two of the most popular and fully feat
 
 </section>
 
-<section class="slide" id="not-quick-review">
-## Extra stuff to fill time
 
+<section class="slide" id="not-quick-review">
+## Stuff to fill time
+
+Here are some CSS selector tricks
+
+* **Multiple selectors** (`selector1, selector2): Selects multiple selectors
 * **Child selector** (`div p`): Selects children any number of nested levels deep
 * **Anchor selectors** (`:link`, `:visited`, `:hover`, `:active`): Selects different states of a hyperlink
 * **Universal selector** (`*`): Selects everything. Try not to use this.
@@ -370,6 +374,22 @@ Twitter Bootstrap and Zurb Foundation are two of the most popular and fully feat
 * **Pseudo element selectors** (`:before`, `:after`): Inserts a pseudo "element" whose content is defined by the `content` property
 
 Better information is available at the [actual W3 spec](http://www.w3.org/TR/CSS2/selector.html).
+</section>
+
+<section class="slide" id="not-quick-review-2">
+## Even more stuff to fill time
+
+* Web fonts
+    * Originally limited to what fonts *most* users had installed, now you can use whatever you want with services like [Google Web Fonts](http://www.google.com/fonts/) and [Typekit](https://typekit.com/)
+* Responsive design
+    * Done through `@media` queries limiting different sets of style for different device sizes
+
+        <pre><code>@media screen and (max-width: 800px) {
+        	/* Fun custom small screen size code here */
+		}</code></pre>
+* Vendor prefixes (`-moz-`, `-webkit-`, etc.)
+    * Used by each browser to "experiment" with implementations of new features
+    * I think vendor prefixes are stupid; develop without them, then use something like [Prefixr](http://prefixr.com/) to add them in for you.
 </section>
 
 <section class="slide" id="questions">
