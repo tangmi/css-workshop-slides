@@ -1,1 +1,11 @@
-/* Ask away */
+#kevin {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+
+	position: absolute;
+	left: 50%;
+	top: 50%;
+
+	margin: -50px 0 0 -50px;
+}

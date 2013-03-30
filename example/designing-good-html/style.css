@@ -1,1 +1,93 @@
-/* Don't worry about this yet */
+body {
+	margin: 0;
+}
+
+#tang {
+	background-color: rgb(204,204,204);
+	width: 512px;
+	margin: 0 auto;
+}
+
+#header {
+	background-image: url("http://placekitten.com/512/150");
+	height: 150px;
+	color: white;
+	text-shadow: 0px 0px 25px black;
+	font-family: sans-serif;
+}
+
+#header h1#site-title, #header p.site-description {
+	margin: 0;
+	padding-top: 1em;
+	padding-left: 16px;
+}
+
+#navigation {
+	width: 30%;
+	float: left;
+}
+
+#navigation ul.menu {
+	padding: 0;
+	list-style: none;
+	margin: 0;
+
+	padding-right: 0.5em;
+}
+
+#navigation li.menu-item a {
+	display: block;
+	padding: 0.5em;
+	border-bottom: 1px solid gray;
+}
+
+#navigation li.menu-item a:link, #navigation li.menu-item a:visited {
+	text-decoration: none;
+	color: gray;
+}
+
+#navigation li.menu-item a:hover, #navigation li.menu-item a:active {
+	color: red;
+	background-image: url("http://placekitten.com/146/35");
+}
+
+#navigation li.menu-item a:hover:after, #navigation li.menu-item a:active:after {
+	content: ">>";
+}
+
+#navigation li.menu-item-selected {
+	background-image: url("http://placekitten.com/150/40");
+}
+
+
+
+#content {
+
+}
+
+.post h1.post-title {
+	text-decoration: underline overline;
+
+
+}
+
+.post p.post-date {
+	color: rgb(30,30,30);
+}
+
+.post p.post-date:before {
+	content: "Posted on: ";
+	color: red;
+}
+
+
+
+
+#content {
+	width: 70%;
+	float: right;
+}
+
+#footer {
+	clear:both;
+}
