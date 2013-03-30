@@ -1,0 +1,16 @@
+h1#problem {
+	background-color: gray;
+}
+
+h1#bad-html span {
+	background-color: gray;
+}
+
+h1#good-html {
+	background-color: gray;
+	display: inline-block;
+}
+h1#good-html:after {
+	display: block;
+	height: 0;
+}

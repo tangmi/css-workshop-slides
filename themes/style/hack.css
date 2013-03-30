@@ -11,17 +11,54 @@ img#cq {
 	position: fixed;
 	left: 0;
 	bottom: 0;
-	padding: 1em;
+	padding: 0.5em;
 	background: white;
 	opacity: 0.5;
+	width: 90px;
 }
 
-h1 > small {
+h1 small {
 	font-weight: 400 !important;
 	font-size: 75% !important;
 }
 
 iframe {
-	width: 100%;
+	width: 66%;
+	float: right;
 	height: 500px;
+	border: 1px solid rgb(204, 204, 240) !important;
+}
+
+code {
+	border: 1px solid rgb(204, 204, 204) !important;
+	padding: 0.05em 0.4em !important;
+}
+
+pre > code {
+	padding: 0 !important;
+	border: none !important;
+}
+
+pre.example {
+	/*margin-left: 1.5em;*/
+	font-size: 16px !important;
+	width: 30%;
+	float: left;
+}
+
+pre.example-html:before {
+	content: "HTML";
+}
+
+pre.example-css:before {
+	content: "CSS";
+}
+
+pre.example:before {
+	display: block;
+	font-family: "Open Sans", sans-serif;
+	font-weight: bold;
+	border-bottom: 1px solid rgb(204, 204, 240);
+	color: rgb(130,130,130);
+	margin-bottom: 1em;
 }

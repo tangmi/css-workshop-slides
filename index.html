@@ -29,8 +29,33 @@
 <body class="deck-container">
 
 <section class="slide" id="title">
-<h1>CSS<br><small>(and good practices?)</small></h1>
+# CSS <small>(and good practices?)</small>
 </section>
+
+<section class="slide" id="this-class">
+## What is this class?
+
+CSS is super fun and I think more people should know it.
+
+### What will it teach you?
+
+* Probably not much
+* Good practices for better code management in the future
+* Some random CSS tricks
+
+### What won't it teach you?
+
+* HTML5 tags (`article`, `header`, etc.)
+* Very specific CSS tricks for very specific styling problems
+* Any sort of design
+
+If you're curious about this stuff, **ask me about it afterwards in person**. I just don't know enough to make a general talk about it worthwhile.
+
+*Note: This presentation will be filled with words, as it'll be available for download on my GitHub if anybody wants to reread it.*
+</section>
+
+
+
 
 <section class="slide" id="prerequisites">
 ## Prerequisites
@@ -47,16 +72,29 @@
 Or: *Kevin's KodeKitten A-`cat`-amay* Web Development Workshop
 </section>
 
+
+
+
+
 <section class="slide" id="disclaimer">
 ## A quick disclaimer
 
 * #### Coding conventions are like religions. Every one follows one religiously. This will probably be filled with content some people may rage about.
+    * I follow the school of "**clean markup over clean css**"
 
-* #### I don't actually know how to CSS very well. Lol, what am I doing up here?
+* I don't actually know how to CSS very well. Lol, *what am I doing up here*?
+
+* I won't really be talking about HTML5 tags, because they're mostly just differently named `div`s
 </section>
+
+
+
+
 
 <section class="slide" id="quick-review">
 ## Stuff you already know
+
+### What is a CSS?
 
     h1 {
     	font-size: 3em;
@@ -65,38 +103,127 @@ Or: *Kevin's KodeKitten A-`cat`-amay* Web Development Workshop
 
 ##### This is a CSS, here's some nomenclature:
 
-* The selector (`h1`, in this case) will match an element or set of elements in the document
-* Non-empty selectors contain pairs of properties to values, which defines the declaration
+* The **selector** (`h1`, in this case) will match an element or set of elements in the document
+* Non-empty selectors contain pairs of **properties** to **values**, which defines the declaration
 </section>
+
+
+
+
+
 
 <section class="slide" id="quick-review-2">
 ## Stuff you may already know
 
-* 
+### CSS stands for cascading style sheet, as in, it's for styling content
+
+* You can select elements in a document by *tag name*, *class name* or *id name*, and *pseudo element selectors* (you don't really need to know about this last one)
+* Any style you see on most HTML content can be described by a combination of **property** - **value** declarations
+* Unlike Ruby on Rails, it's not evil magic and therefore not something to avoid
+
+Here's another CSS:
+
+    /* Give your code snippets that fancy look everyone wants */
+    code {
+        background-color: #f8f8f8;
+        border: 1px solid #d2d2d2;
+        border-radius: 5px;
+        padding: 0.2em 0.5em;
+        color: #007020;
+    }
 </section>
+
+
+
+
 
 <section class="slide" id="quick-review-3">
 ## Stuff that's nice to know
 
 ### Styles that appear later in a document *usually* override prior declarations.
 
+    p {
+        color: black;
+    }
+    p {
+        color: yellow; /* lol, try reading it now */
+    }
+
 #### Browsers provide default stylings for CSS
 
-* Your CSS is overriding the default css
-* Your early CSS might get overriden by later CSS
+* Imagine your browser reading your CSS code like a book (It'll use what it "sees" last)
+    * Your CSS is overriding the default css
+    * Your early CSS might get overriden by your own later CSS
 * CSS specificity is stupid, but explains weird cases of declaration overriding
-</section>
-
-<section class="slide" id="quick-review-3-example">
-## Example
-<iframe src="example/index.html" frameborder="0" seamless="true"></iframe>
+    * If you run into problems about specificity, you may be doing something wrong
 </section>
 
 
 
-<section class="slide" id="display-types">
-## Block vs. Inline
+
+<section class="slide" id="why-css">
+## Why CSS?
+
+    <FONT COLOR="#FF0000" SIZE="5"><CENTER>THIS IS REALLY FUN</CENTER></FONT>
+    <FONT COLOR="#000000" SIZE="3">I REALLY WANT TO BE DOING THIS ALL DAY</FONT>
+
+* HTML3 had tags like `font`, `center`, and it sucked a lot
+    * Imagine having to manage a large site, that would suck
+    * Imagine changing a site's design, that would also suck
+    * Actually, I'll admit to loving the `center` tag at one point
+* Allows for delivered **content** be separate from its **style** (*Hint: this is the main point of this workshop*) (*Hint #2: this also sucks less than HTML3*)
+
+#### CSS fixes these problems!
 </section>
+
+
+
+
+
+<section class="slide" id="names">
+## Tags: they have names, you know
+
+*I know I'm not talking about CSS yet, bear with me.*
+
+### All HTML tags and CSS selectors have names **that are not arbitrary**
+
+Here are some examples:
+
+* `div` refers to something that **divides** the page (mind = blown)
+* `h1`, `h2`, `h3`, `h4`, `h5`, and `h6` refer to **heading level**, not to size (imagine a well written paper with a table of contents consisting of many nested lists)
+* `p` refers to a **paragraph** element
+* `ul` and `ol` stand for **unordered** and **ordered lists**
+    * `li` stands for **list item**
+* Many more
+* `span` refers to ??? (seriously, I have no idea)
+</section>
+
+<section class="slide" id="names-2">
+## Use tags appropriately in your HTML markup!
+
+* Rule number 1 is: use tags correctly in your markup
+    * **Don't use `h2` because it's "big, but not too big"**
+    * If your content has a bit of quoted text, use a `blockquote` element, and so forth
+* Rule number 2 is: you *will* use tags correctly in your markup!
+* Rule number 3 is: CSS hacks are always more favorable than HTML hacks
+    * I'll show a quick example on the next slide
+
+#### Quick note on reasoning behind this logic:
+
+* HTML is a subset of XML
+    * If you were designing a SOAP endpoint, you wouldn't add in unnessecary elements just for giggles
+    * We should similarly not add extraneous HTML markup just to style easier
+* If we wanted to switch site designs, it would require only the modification of `.css` files
+    * Remember HTML3 and it's (now deprecated) `font` and `center` tags
+</section>
+
+<section class="slide" id="names-2-example">
+## Example: clean HTML over clean CSS
+
+The problem here is a `block` display type versus an `inline` one.
+</section>
+
+
 
 <section class="slide" id="not-quick-review">
 ## Extra stuff to fill time
@@ -115,31 +242,33 @@ Or: *Kevin's KodeKitten A-`cat`-amay* Web Development Workshop
 * somebody wanted me to talk about this
 </section>
 
-<section class="slide" id="test">
-## Slide test
+<section class="slide" id="frameworks">
+## Guys, Twitter Boostrap
 
-This is a slide test
+Twitter Bootstrap (and Foundation, and 960grid, and so forth) is a CSS framework. A CSS framework contains a lot of default styling that comes with many neat features (quick prototpying, cross-browser support, responsive design support, aesthetically pleasing). Here's why you should and shouldn't use them.
 
-<ul>
-<li class="slide" id="extensions-goto">
-test
-</li>
-<li class="slide" id="extensions-hash">
-test
-</li>
-</ul>
+### Pros:
+
+* CSS frameworks are great for rapid prototyping
+    * It's really quick for a developer to quickly realise an idea or wireframe
+    * Usually comes with very nice typography defaults
+* Framework source code is an awesome resource for learning new CSS tricks
+
+### Cons:
+
+* Terrible `class` and `id` names lead to terrible markup (Bootstrap uses class names like `span3` or `hero-unit`, which really don't have any relevance to your content)
+* Default styling may look great, but nobody bothers to change it so all Bootstrap sites end up looking like generic copies (you'll start noticing this if you ever use Bootstrap)
+
+#### Other notes:
+
+Twitter Bootstrap and Zurb Foundation are two of the most popular and fully featured frameworks. Bootstrap is built on LESS and Foundation is built on SASS (you don't need to know what this means right now), so they can theoretically be "compiled" into a lightweight version tailored to your site's markup.
+
 </section>
 
 
-<section class="slide" id="elements-blockquotes">
-## This is a header
 
-<blockquote>
-	<p>this is a quote</p>
-	<p><cite>what</cite></p>
-</blockquote>
-
-wat.
+<section class="slide" id="quick-review-3-example">
+## Example
 </section>
 
 
@@ -163,7 +292,6 @@ wat.
 <a href="." title="Permalink to this slide" class="deck-permalink">#</a>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 
 <script src="core/deck.core.js"></script>
 <script src="extensions/hash/deck.hash.js"></script>
@@ -171,21 +299,72 @@ wat.
 <script src="extensions/goto/deck.goto.js"></script>
 <script src="extensions/status/deck.status.js"></script>
 <script src="extensions/navigation/deck.navigation.js"></script>
-<script src="extensions/scale/deck.scale.js"></script>
 <script src="extensions/markdown/Markdown.Converter.js"></script>
 <script src="extensions/markdown/deck.markdown.js"></script>
 
 <script>
+String.prototype.htmlspecialchars = function() {
+	return this
+	.split("&").join("&amp;")
+	.split("<").join("&lt;")
+	.split(">").join("&gt;")
+	.split("\"").join("&quot;");
+}
+
 $(function() {
+
+
+	(function() {
+		var examples = {
+			"names-2-example": "names-2",
+			"quick-review-3-example": "test"
+		}
+		var loadExample = function( id, path ) {
+			// document.write('<iframe src="' + path + '" frameborder="0" seamless="true"><\/iframe>');
+			var element = $("#" + id);
+			var htmlpath = "example/" + path + "/index.html";
+			var csspath = "example/" + path + "/style.css";
+
+			$.ajax(csspath).done(function(data) {
+				data = data.split('\t').join('  ');
+
+				var cssid = id + '-css';
+				element.append('<pre class="example example-css"><code id="' + cssid + '" class="prettyprint lang-css">' + data.htmlspecialchars() + '</code></pre>');
+			}).done(function() {
+
+				$.ajax(htmlpath).done(function(data) {
+					data = data.substring(data.indexOf("<body>") + 7, data.indexOf("</body>"))
+					data = data.split('\t').join('  ');
+
+					var htmlid = id + '-html';
+					element.append('<pre class="example example-html"><code id="' + htmlid + '" class="prettyprint lang-html">' + data.htmlspecialchars() + '</code></pre>');
+				});
+
+			}).done(function() {
+
+				element.append('<iframe src="' + htmlpath + '" frameborder="1" seamless="true"><\/iframe>');
+
+			});
+
+		}
+		for(var example in examples) {
+			loadExample(example, examples[example]);
+		}
+	})();
+
+
 	$.deck('.slide');
 
 	var elements = document.getElementsByTagName('code')
 	for(var i = 0; i < elements.length; i++) {
 		elements[i].className = "prettyprint";
-		console.log(elements[i]);
 	}
+
 });
 </script>
+
+<!-- <script src="extensions/scale/deck.scale.js"></script> -->
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css"></script>
 
 </body>
 </html>
